@@ -1,1 +1,110 @@
-//
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+button, input {
+    overflow: hidden!important;
+}
+
+.post{
+    border-left: 2px solid #1d68a7;
+    padding: 12px;
+}
+
+
+.new-post{
+    padding: 16px 0;
+
+}
+
+.new-post header, .posts header{
+    margin-bottom: 20px;
+}
+
+.posts .post .info{
+    color: #aaa;
+    font-style: italic;
+}
+.upload-image::-webkit-file-upload-button {
+    visibility: hidden!important;;
+}
+.upload-image::before {
+    content: 'Select some files'!important;;
+    display: inline-block!important;;
+    background: linear-gradient(top, #f9f9f9, #e3e3e3)!important;;
+    border: 1px solid #999!important;;
+    border-radius: 3px!important;;
+    padding: 5px 8px!important;;
+    outline: none!important;;
+    white-space: nowrap!important;;
+    -webkit-user-select: none!important;;
+    cursor: pointer!important;;
+    text-shadow: 1px 1px #fff!important;;
+    font-weight: 700!important;;
+    font-size: 10pt!important;;
+}
+.upload-image:hover::before {
+    border-color: black!important;;
+}
+.upload-image:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+
+button {
+    border: none;
+}
+.searchbar {
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #f8f9fa;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.search_input {
+    color: gray;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+}
+
+.searchbar > .search_input {
+    padding: 0 10px;
+    width: 450px;
+    caret-color:#1d68a7;
+}
+
+.searchbar:hover > .search_icon {
+    background: white;
+    color: #1d68a7;
+}
+
+.search_icon {
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:gray;
+    text-decoration:none;
+}
+
+.cursor_pointer {
+    cursor: pointer!important;
+}
+
+.font-10 {
+    font-size: 10px;
+}

@@ -47,7 +47,9 @@
             .title {
                 font-size: 84px;
             }
-
+            .mt-3{
+                margin-top: 1%;
+            }
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -57,7 +59,12 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
+            .text-center{
+                text-align: center;
+            }
+            .text-right{
+                text-align: right;
+            }
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -68,33 +75,43 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ route('home') }}">Домой</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Вход</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Регистрация</a>
                         @endif
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
+            <div class="row">
+            <div class="content col-12">
                 <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    Social
                 </div>
             </div>
+                <div class="row">
+                <div class="font-weight-light text-left col-12">
+                    <div>Общество — свод камней, который обрушился бы, если бы один не поддерживал другого.</div>
+                </div>
+                <div class="text-right mt-3">
+                    <i class="">Луций Анней Сенека</i>
+                </div>
+                </div>
+            </div>
+
+
+{{--                <div class="links">--}}
+{{--                    <a href="https://laravel.com/docs">Docs</a>--}}
+{{--                    <a href="https://laracasts.com">Laracasts</a>--}}
+{{--                    <a href="https://laravel-news.com">News</a>--}}
+{{--                    <a href="https://blog.laravel.com">Blog</a>--}}
+{{--                    <a href="https://nova.laravel.com">Nova</a>--}}
+{{--                    <a href="https://forge.laravel.com">Forge</a>--}}
+{{--                    <a href="https://vapor.laravel.com">Vapor</a>--}}
+{{--                    <a href="https://github.com/laravel/laravel">GitHub</a>--}}
+{{--                </div>--}}
         </div>
     </body>
 </html>
