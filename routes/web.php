@@ -38,5 +38,6 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/profile/friends', 'UserController@getFriends')->name('user.getFriends');
     Route::post('/post/addLike', 'PostController@addLike')->name('like.add');
     Route::post('/post/edit/{id}', 'PostController@editPost')->name('post.edit');
+    Route::post('/group/add', 'UserController@addGroup')->name('addGroup');
 });
 
