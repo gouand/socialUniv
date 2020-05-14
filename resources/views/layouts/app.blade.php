@@ -70,9 +70,6 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <button type="button" class="dropdown-item" data-toggle="modal" data-target="#addGroup">
-                                        Добавить группу
-                                    </button>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -96,46 +93,6 @@
 
 
 
-    </div>
-    <div class="modal fade"  id="addGroup" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Добавить группу</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="addGroupForm" action="{{ route('addGroup') }}" method="post" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Название:</label>
-                            <input type="text" name="title" class="form-control" id="title-name">
-                        </div>
-                        <div class="form-group">
-                            <label for="message-text" class="col-form-label">Описание:</label>
-                            <textarea class="form-control" name="description" id="description-name"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Тема:</label>
-                            <input type="text" name="theme" class="form-control" id="theme-name">
-                        </div>
-                        <div class="input-group mb-3">
-                            <div class="custom-file">
-                                <input type="file" name="logotype" class="custom-file-input" id="inputGroupFile02">
-                                <label class="custom-file-label" for="inputGroupFile02">Добавить аватар</label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" onclick="event.preventDefault();
-                                                     document.getElementById('addGroupForm').submit();" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
     </div>
     <script>
         var likePostUrl = "{{ route('like.add') }}"
