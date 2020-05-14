@@ -29,7 +29,14 @@
                         {{--                    <a class="dropdown-item" href="#">Separated link</a>--}}
                         {{--                </div>--}}
 
-                        <a class="btn btn-outline-primary" href="#" role="button">Подружиться</a>
+{{--                        <a class="btn btn-outline-primary" href="#" role="button">Подружиться</a>--}}
+                        @if(Auth::id() != request('id'))
+                        @if(is_null(Auth::user()->friends()->find($user->id)))
+                            <button type="button" class="ml-5 mr-5 mt-5 btn btn-outline-primary" userid="{{ $user->id }}" id="changeFriend">Дружить</button>
+                        @else
+                            <button type="button" class="ml-5 mr-5 mt-5 btn btn-primary" userid="{{ $user->id }}" id="changeFriend">Вы дружите</button>
+                        @endif
+                        @endif
                     </div>
                 </div>
 
@@ -97,21 +104,21 @@
 
 
                 <div class="col-3">
-                    <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">Главная сообщества</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Администраторы</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Реклама</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Статистика</a>
-                        </li>
+{{--                    <ul class="nav nav-pills flex-column">--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link active" href="#">Главная сообщества</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="#">Администраторы</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="#">Реклама</a>--}}
+{{--                        </li>--}}
+{{--                        <li class="nav-item">--}}
+{{--                            <a class="nav-link" href="#">Статистика</a>--}}
+{{--                        </li>--}}
 
-                    </ul>
+{{--                    </ul>--}}
 
                 </div>
 

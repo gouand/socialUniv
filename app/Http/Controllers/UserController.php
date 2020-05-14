@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\FriendUser;
+use App\Group;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -63,5 +65,30 @@ class UserController extends Controller
 
     public function AuthRouteAPI(Request $request){
         return $request->user();
+    }
+
+    public function addGroup(Request $request){
+        $validatedData = Validator::make($request->all(), [
+            'description' => 'required|max:1000',
+            'logotype' => 'file:jpeg:png:gif:webp',
+            'title' => 'required|max:255',
+            'theme' => 'required|max:255'
+        ]);
+        $group = new Group();
+        $group->user_id = Auth::id();
+        $group->description = $request->input('description');
+        $group->logotype = $request->has('logotype') ? $request->file('logotype')->store('public/groups/avatars') : "public/avatars/default.png";
+        $group->title = $request->input('title');
+        $group->theme = $request->input('theme');
+
+        if($validatedData->fails()){
+            return redirect()->back()->withErrors($validatedData)->withInput();
+        }
+        if(!$group->save()){
+            $message = "Ошибка создания поста";
+        }else{
+            $message = "Группа кспешно создана";
+        }
+        return redirect()->back()->with(['message' => $message]);
     }
 }
